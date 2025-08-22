@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MegaUniversity — Enroll</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>MegaUniversity — Course Enrollment</h1>
+    <nav class="nav">
+      <a href="/">Enroll</a>
+      <a href="/enrollments">Enrollments</a>
+      <a href="/courses">Courses</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Enroll in a Course</h2>
+      <form action="/enroll" method="POST" id="enrollForm" novalidate>
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="studentName">Student Name *</label>
+            <input type="text" id="studentName" name="studentName" placeholder="e.g., Jane Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="studentId">Student ID (YYYY-NNNN) *</label>
+            <input type="text" id="studentId" name="studentId" placeholder="e.g., 2025-0001" required />
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="courseCode">Course *</label>
+            <select id="courseCode" name="courseCode" required>
+              <option value="">-- Select Course --</option>
+              <option value="CS401">CS401 — Advanced Web Development</option>
+              <option value="CS402">CS402 — Database Systems</option>
+              <option value="CS403">CS403 — Software Engineering</option>
+              <option value="CS404">CS404 — Computer Networks</option>
+              <option value="CS405">CS405 — Artificial Intelligence</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="semester">Semester *</label>
+            <select id="semester" name="semester" required>
+              <option value="">-- Select Semester --</option>
+              <option value="Fall 2025">Fall 2025</option>
+              <option value="Spring 2026">Spring 2026</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Reason / Notes (optional)</label>
+          <textarea id="reason" name="reason" rows="3" placeholder="Why this course? Any constraints?"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit">Enroll</button>
+          <button type="reset" class="secondary">Clear</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Fill the form and submit. Check <a href="/enrollments">Enrollments</a> to confirm.</small>
+  </footer>
+</body>
+</html>
